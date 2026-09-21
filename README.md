@@ -1,6 +1,6 @@
-# TE OP-XY
+# Teenage Engineering OP-XY
 
-A browser-based, photorealistic OP-XY workstation simulation with an interactive 3D device, responsive camera views, animated screen UI, and Beat Tour.
+A browser-based, photorealistic simulation of the Teenage Engineering OP-XY workstation with an interactive 3D device, responsive camera views, animated screen UI, and Beat Tour.
 
 **[Open the live site](https://mitchivin.github.io/te-opxy/)**
 
@@ -8,7 +8,7 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 
 ## Features
 
-- Photorealistic WebGL model of the OP-XY hardware
+- Photorealistic WebGL model of the Teenage Engineering OP-XY hardware
 - Orbit, pan, and zoom camera controls
 - Interactive keys, encoders, and screen controls
 - Animated screen pages and device feedback
@@ -25,6 +25,6 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 
 ## About
 
-Built by [Mitch Ivin](https://mitchivin.com/). This is an independent browser simulation inspired by the OP-XY hardware and is not affiliated with Teenage Engineering.
+Built by [Mitch Ivin](https://mitchivin.com/). This is an independent browser simulation inspired by the Teenage Engineering OP-XY hardware and is not affiliated with Teenage Engineering.
 
 The application source is maintained privately; this repository is the public deployment surface for the live site.
