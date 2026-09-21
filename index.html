@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TE OP-XY — Photorealistic WebGL Simulation</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
+  <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
+  <script type="module" crossorigin src="./assets/index-QHFOWku7.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-ZE3Xv0Rd.css">
+</head>
+<body>
+  <!-- 3D Canvas Container -->
+  <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
+
+  <!-- Camera Presets Toolbar -->
+  <nav class="camera-toolbar" role="toolbar" aria-label="Camera Presets">
+    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">top 1:1</button>
+    <button class="preset-btn dev-only" data-preset="rightSide1to1" aria-pressed="false">right 1:1</button>
+    <button class="preset-btn dev-only" data-preset="leftSide1to1" aria-pressed="false">left 1:1</button>
+    <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">front 1:1</button>
+    <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">rear 1:1</button>
+    <button class="preset-btn dev-only" data-preset="bottom1to1" aria-pressed="false">bottom 1:1</button>
+    <button class="preset-btn active" data-preset="hero3D" aria-pressed="true">3d</button>
+    <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">screen</button>
+    <button class="preset-btn" data-preset="encodersMacro" aria-pressed="false">encoders</button>
+    <button class="preset-btn" data-preset="keyboardMacro" aria-pressed="false">keys</button>
+    <button class="preset-btn" data-preset="portsMacro" aria-pressed="false">ports</button>
+    <button class="preset-btn" data-preset="grilleMacro" aria-pressed="false">grille</button>
+    <button id="btn-beat-tour" class="beat-launch" aria-pressed="false">beat tour</button>
+    <span id="beat-panel" class="beat-actions" hidden>
+      <button id="beat-keep" hidden>keep beat</button>
+      <button id="beat-return">return</button>
+    </span>
+  </nav>
+  <span id="beat-status" class="sr-only" role="status"></span>
+
+  <!-- Keyboard Shortcuts & Controls Info -->
+  <aside class="interaction-hint" aria-label="Keyboard and Mouse Shortcuts">
+    <span class="hint-title">drag knobs / press keys</span>
+    <span class="hint-row">middle/right drag orbit&nbsp;&nbsp; <kbd>shift</kbd> + middle/right pan&nbsp;&nbsp; wheel zoom</span>
+    <span class="hint-row"><kbd>space</kbd><span>play</span><kbd>1–0</kbd><span>accidentals</span></span>
+    <span class="hint-notes">naturals&nbsp; a s d f g h j k l z x v b n&nbsp;&nbsp; <kbd>\</kbd> bar</span>
+  </aside>
+
+  <p class="mobile-orientation-note" aria-hidden="true">landscape view<br>rotate phone</p>
+
+</body>
+</html>
