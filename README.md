@@ -8,8 +8,6 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 
 ![Teenage Engineering OP-XY 3D view](assets/reference/te-opxy-3d.png)
 
-![Teenage Engineering OP-XY screen view](assets/reference/te-opxy-screen.png)
-
 ## Features
 
 - Photorealistic WebGL model of the Teenage Engineering OP-XY hardware
@@ -18,6 +16,8 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 - Animated screen pages and device feedback
 - Beat Tour for guided interaction and playback
 - Responsive landscape layout for desktop and mobile
+
+- ![Teenage Engineering OP-XY screen view](assets/reference/te-opxy-screen.png)
 
 ## Get started
 
