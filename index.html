@@ -6,31 +6,31 @@
   <title>Teenage Engineering OP-XY | Photorealistic WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-DLezjxhG.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-ZE3Xv0Rd.css">
+  <script type="module" crossorigin src="./assets/index-B1QXZUxx.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C7DEaU7l.css">
 </head>
 <body>
   <!-- 3D Canvas Container -->
   <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
 
   <!-- Camera Presets Toolbar -->
-  <nav class="camera-toolbar" role="toolbar" aria-label="Camera Presets">
-    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">top 1:1</button>
-    <button class="preset-btn dev-only" data-preset="rightSide1to1" aria-pressed="false">right 1:1</button>
-    <button class="preset-btn dev-only" data-preset="leftSide1to1" aria-pressed="false">left 1:1</button>
-    <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">front 1:1</button>
-    <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">rear 1:1</button>
-    <button class="preset-btn dev-only" data-preset="bottom1to1" aria-pressed="false">bottom 1:1</button>
-    <button class="preset-btn active" data-preset="hero3D" aria-pressed="true">3d</button>
-    <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">screen</button>
-    <button class="preset-btn" data-preset="encodersMacro" aria-pressed="false">encoders</button>
-    <button class="preset-btn" data-preset="keyboardMacro" aria-pressed="false">keys</button>
-    <button class="preset-btn" data-preset="portsMacro" aria-pressed="false">ports</button>
-    <button class="preset-btn" data-preset="grilleMacro" aria-pressed="false">grille</button>
-    <button id="btn-beat-tour" class="beat-launch" aria-pressed="false">beat tour</button>
+  <nav class="camera-toolbar" role="toolbar" aria-label="Camera and detail views">
+    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">Top 1:1</button>
+    <button class="preset-btn dev-only" data-preset="rightSide1to1" aria-pressed="false">Right 1:1</button>
+    <button class="preset-btn dev-only" data-preset="leftSide1to1" aria-pressed="false">Left 1:1</button>
+    <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">Front 1:1</button>
+    <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">Rear 1:1</button>
+    <button class="preset-btn dev-only" data-preset="bottom1to1" aria-pressed="false">Bottom 1:1</button>
+    <button class="preset-btn active" data-preset="hero3D" aria-pressed="true">3D</button>
+    <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">Screen</button>
+    <button class="preset-btn" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
+    <button class="preset-btn" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
+    <button class="preset-btn" data-preset="portsMacro" aria-pressed="false">Ports</button>
+    <button class="preset-btn" data-preset="grilleMacro" aria-pressed="false">Grille</button>
+    <button id="btn-beat-tour" class="beat-launch" aria-pressed="false">Beat Tour</button>
     <span id="beat-panel" class="beat-actions" hidden>
-      <button id="beat-keep" hidden>keep beat</button>
-      <button id="beat-return">return</button>
+      <button id="beat-keep" hidden>Keep Beat</button>
+      <button id="beat-return">Return</button>
     </span>
   </nav>
   <span id="beat-status" class="sr-only" role="status"></span>
