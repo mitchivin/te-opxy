@@ -6,8 +6,8 @@
   <title>Teenage Engineering OP-XY | Photorealistic WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-B1QXZUxx.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-C7DEaU7l.css">
+  <script type="module" crossorigin src="./assets/index-DJHzr71Z.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CvdMm5wI.css">
 </head>
 <body>
   <!-- 3D Canvas Container -->
@@ -28,18 +28,20 @@
     <button class="preset-btn" data-preset="portsMacro" aria-pressed="false">Ports</button>
     <button class="preset-btn" data-preset="grilleMacro" aria-pressed="false">Grille</button>
     <button id="btn-beat-tour" class="beat-launch" aria-pressed="false">Beat Tour</button>
+    <button id="btn-still-dre" class="song-launch" aria-pressed="false" title="Play Still D.R.E. through the OP–XY controls">Still D.R.E.</button>
     <span id="beat-panel" class="beat-actions" hidden>
       <button id="beat-keep" hidden>Keep Beat</button>
       <button id="beat-return">Return</button>
     </span>
   </nav>
   <span id="beat-status" class="sr-only" role="status"></span>
+  <span id="song-status" class="sr-only" role="status"></span>
 
   <!-- Keyboard Shortcuts & Controls Info -->
   <aside class="interaction-hint" aria-label="Keyboard and Mouse Shortcuts">
     <span class="hint-title">drag knobs / press keys</span>
     <span class="hint-row">middle/right drag orbit&nbsp;&nbsp; <kbd>shift</kbd> + middle/right pan&nbsp;&nbsp; wheel zoom</span>
-    <span class="hint-row"><kbd>space</kbd><span>play</span><kbd>1–0</kbd><span>accidentals</span></span>
+    <span class="hint-row"><kbd>space</kbd><span>play</span><kbd>1–0</kbd><span>accidentals</span><kbd>i</kbd><span>controls</span></span>
     <span class="hint-notes">naturals&nbsp; a s d f g h j k l z x v b n&nbsp;&nbsp; <kbd>\</kbd> bar</span>
   </aside>
 
