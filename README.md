@@ -6,6 +6,10 @@ A browser-based, photorealistic simulation of the Teenage Engineering OP-XY work
 
 Works in a modern desktop or mobile browser. The device can be explored directly in 3D, with the screen and hardware controls responding as you interact with them.
 
+![Teenage Engineering OP-XY 3D view](assets/te-opxy-3d.png)
+
+![Teenage Engineering OP-XY screen view](assets/te-opxy-screen.png)
+
 ## Features
 
 - Photorealistic WebGL model of the Teenage Engineering OP-XY hardware
