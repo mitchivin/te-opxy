@@ -6,8 +6,8 @@
   <title>Teenage Engineering OP-XY | Interactive WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-C2YNeA0V.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DFHKP1gO.css">
+  <script type="module" crossorigin src="./assets/index-DOk4VoMM.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-HSUxskqx.css">
 </head>
 <body data-song-mode="build">
   <!-- Songs: the stage header -->
@@ -37,6 +37,11 @@
   <div class="stage">
     <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
     <div class="stage-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div id="camera-tour-caption" class="camera-tour-caption" hidden>
+      <span id="camera-tour-shot"></span>
+      <span id="camera-tour-count"></span>
+      <button id="camera-tour-exit" type="button" aria-label="Stop camera tour">close</button>
+    </div>
   </div>
 
   <!-- Views: the stage footer -->
@@ -55,6 +60,7 @@
       <button class="preset-btn dev-only" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
       <button class="preset-btn dev-only" data-preset="grilleMacro" aria-pressed="false">Grille</button>
     </nav>
+    <button id="btn-camera-tour" class="camera-tour-toggle" type="button" aria-pressed="false" title="Start a guided orbit around the device">tour</button>
   </footer>
 
 </body>
