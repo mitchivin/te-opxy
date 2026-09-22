@@ -1,6 +1,6 @@
 # Teenage Engineering OP-XY
 
-A browser-based, photorealistic simulation of the Teenage Engineering OP-XY workstation with an interactive 3D device, responsive camera views, animated screen UI, and Beat Tour.
+A browser-based simulation of the Teenage Engineering OP-XY workstation with an interactive 3D device, responsive camera views, and animated screen UI.
 
 **[Open the live site](https://mitchivin.github.io/te-opxy/)**
 
@@ -10,14 +10,13 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 
 ## Features
 
-- Photorealistic WebGL model of the Teenage Engineering OP-XY hardware
+- Interactive WebGL model of the Teenage Engineering OP-XY hardware
 - Orbit, pan, and zoom camera controls
 - Interactive keys, encoders, and screen controls
 - Animated screen pages and device feedback
-- Beat Tour for guided interaction and playback
 - Responsive landscape layout for desktop and mobile
 
-- ![Teenage Engineering OP-XY screen view](assets/reference/te-opxy-screen.png)
+![Teenage Engineering OP-XY screen view](assets/reference/te-opxy-screen.png)
 
 ## Get started
 
@@ -25,7 +24,6 @@ Works in a modern desktop or mobile browser. The device can be explored directly
 2. Drag with the middle or right mouse button to orbit the camera.
 3. Use Shift with the middle or right mouse button to pan, and the wheel to zoom.
 4. Click and drag the hardware controls to interact with the device.
-5. Press Escape to leave Beat Tour.
 
 ## About
 
