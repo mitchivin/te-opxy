@@ -6,41 +6,56 @@
   <title>Teenage Engineering OP-XY | Interactive WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-BTEfbrrm.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D9DGR7JZ.css">
+  <script type="module" crossorigin src="./assets/index-CUFcaOnd.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DFHKP1gO.css">
 </head>
-<body>
-  <!-- 3D Canvas Container -->
-  <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
-
-  <!-- Camera Presets Toolbar -->
-  <nav class="camera-toolbar" role="toolbar" aria-label="Camera and detail views">
-    <button class="preset-btn" data-preset="hero3D" aria-pressed="true">Overview</button>
-    <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">Screen</button>
-    <button class="preset-btn" data-preset="rightControlsMacro" aria-pressed="false">Surface</button>
-    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">Top</button>
-    <button class="preset-btn" data-preset="bottom1to1" aria-pressed="false">Bottom</button>
-    <button class="preset-btn" data-preset="leftSide1to1" aria-pressed="false">Left</button>
-    <button class="preset-btn" data-preset="rightSide1to1" aria-pressed="false">Right</button>
-    <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">Front 1:1</button>
-    <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">Rear 1:1</button>
-    <button class="preset-btn dev-only" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
-    <button class="preset-btn dev-only" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
-    <button class="preset-btn dev-only" data-preset="grilleMacro" aria-pressed="false">Grille</button>
-  </nav>
-  <nav class="songs-menu" aria-label="Songs">
-    <label class="song-mode" for="song-mode"><select id="song-mode" aria-label="Song mode"><option value="build">Build</option><option value="play">Play</option></select></label>
-    <div class="songs-list">
-    <button id="btn-beat-tour" class="song-launch" aria-pressed="false">Numb / Encore</button>
-    <button id="btn-still-dre" class="song-launch" aria-pressed="false" title="Play Still D.R.E. through the OP–XY controls">Still D.R.E.</button>
-    <button id="btn-clint-eastwood" class="song-launch" aria-pressed="false" title="Build Clint Eastwood through the OP–XY controls">Clint Eastwood</button>
-    <button id="btn-nineteen" class="song-launch" aria-pressed="false" title="Build 19-2000 through the OP–XY controls">19-2000</button>
-    <button id="btn-azeroth" class="song-launch" aria-pressed="false" title="Build the original World of Warcraft login theme through the OP–XY controls">Legends of Azeroth</button>
-    <button id="btn-project-lee" class="song-launch" aria-pressed="false" title="Build Project Lee through the OP–XY controls">Project Lee</button>
+<body data-song-mode="build">
+  <!-- Songs: the stage header -->
+  <header class="stage-bar songs-menu">
+    <div class="song-picker">
+      <button class="song-picker-toggle" aria-expanded="false" aria-controls="song-picker-list">
+        <span class="sr-only">Songs: </span><span class="song-picker-label">choose a song</span><span class="song-picker-caret" aria-hidden="true"></span>
+      </button>
+      <nav id="song-picker-list" class="song-picker-list" aria-label="Songs" hidden>
+        <button id="btn-beat-tour" class="song-launch" aria-pressed="false">Numb / Encore</button>
+        <button id="btn-still-dre" class="song-launch" aria-pressed="false" title="Play Still D.R.E. through the OP–XY controls">Still D.R.E.</button>
+        <button id="btn-clint-eastwood" class="song-launch" aria-pressed="false" title="Build Clint Eastwood through the OP–XY controls">Clint Eastwood</button>
+        <button id="btn-nineteen" class="song-launch" aria-pressed="false" title="Build 19-2000 through the OP–XY controls">19-2000</button>
+        <button id="btn-azeroth" class="song-launch" aria-pressed="false" title="Build the original World of Warcraft login theme through the OP–XY controls">Legends of Azeroth</button>
+        <button id="btn-project-lee" class="song-launch" aria-pressed="false" title="Build Project Lee through the OP–XY controls">Project Lee</button>
+      </nav>
     </div>
-  </nav>
-  <span id="beat-status" class="sr-only" role="status"></span>
-  <span id="song-status" class="sr-only" role="status"></span>
+    <fieldset id="song-mode" class="song-mode">
+      <legend class="sr-only">Song mode</legend>
+      <label><input type="radio" name="song-mode" value="build" checked><span>build</span></label>
+      <label><input type="radio" name="song-mode" value="play"><span>play</span></label>
+    </fieldset>
+    <p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p>
+  </header>
+
+  <!-- The stage: the 3D canvas fills exactly the space between the bars -->
+  <div class="stage">
+    <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
+    <div class="stage-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <!-- Views: the stage footer -->
+  <footer class="stage-bar views-bar">
+    <nav class="camera-toolbar" role="toolbar" aria-label="Camera and detail views">
+      <button class="preset-btn" data-preset="hero3D" aria-pressed="true">Overview</button>
+      <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">Screen</button>
+      <button class="preset-btn" data-preset="rightControlsMacro" aria-pressed="false">Surface</button>
+      <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">Top</button>
+      <button class="preset-btn" data-preset="bottom1to1" aria-pressed="false">Bottom</button>
+      <button class="preset-btn" data-preset="leftSide1to1" aria-pressed="false">Left</button>
+      <button class="preset-btn" data-preset="rightSide1to1" aria-pressed="false">Right</button>
+      <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">Front 1:1</button>
+      <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">Rear 1:1</button>
+      <button class="preset-btn dev-only" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
+      <button class="preset-btn dev-only" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
+      <button class="preset-btn dev-only" data-preset="grilleMacro" aria-pressed="false">Grille</button>
+    </nav>
+  </footer>
 
 </body>
 </html>
