@@ -1,0 +1,22 @@
+# Original sampler demonstration library
+
+These seven single-note and single-hit WAV files are generated entirely by
+`scripts/generate-sampler-fixtures.py` in this repository. No source recording,
+manufacturer sound library, musical phrase, or third-party sample is used.
+
+The generated audio is dedicated to the public domain under CC0 1.0:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+22,050 Hz, 16-bit mono. Pitched roots: reed/pluck C4 (MIDI 60), bass C2
+(MIDI 36). These are functional demo sounds, not a selected 19-2000 palette.
+
+The air-key-c5 and finger-bass-c2 single notes are also original CC0 assets, reproducible with scripts/generate-song-notes.py. They contain no recording, riff or stem from Gorillaz or Teenage Engineering. They are available to every sampler track through the studio folder.
+
+## Orchestral single notes
+
+The `orchestra` folder contains two unmodified WAV files from Versilian Studios' [VSCO 2 Community Edition raw WAV library](https://versilian-studios.com/vsco-community/), released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). These are individual instrument notes, not World of Warcraft recordings or melodic phrases.
+
+| Bundled file | Upstream path | MIDI root | SHA-256 |
+| --- | --- | ---: | --- |
+| `orchestra/contrabass-pizz-bb0.wav` | [`Strings/Solo Contrabass/Pizz/BKCtbss_Pizz_A#0_v3_rr1.wav`](https://github.com/sgossner/VSCO-2-CE/blob/master/Strings/Solo%20Contrabass/Pizz/BKCtbss_Pizz_A%230_v3_rr1.wav) | 22 | `FFDCF783332627D78BB09C348CE5BBF64E833D529A1CFD48E05362F27A857C0A` |
+| `orchestra/violin-spic-d3.wav` | [`Strings/Violin Section/Spic/VlnEns_Spic_D3_v2_rr1.wav`](https://github.com/sgossner/VSCO-2-CE/blob/master/Strings/Violin%20Section/Spic/VlnEns_Spic_D3_v2_rr1.wav) | 50 | `36105C7BC208181A10B41A468AAB1E8CA4F31A9EAE43834DD90D8D533A48E650` |

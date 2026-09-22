@@ -6,8 +6,8 @@
   <title>Teenage Engineering OP-XY | Photorealistic WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-BRrAssvA.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CvdMm5wI.css">
+  <script type="module" crossorigin src="./assets/index-BBCBRvMr.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BwaAikTr.css">
 </head>
 <body>
   <!-- 3D Canvas Container -->
@@ -15,37 +15,44 @@
 
   <!-- Camera Presets Toolbar -->
   <nav class="camera-toolbar" role="toolbar" aria-label="Camera and detail views">
-    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">Top 1:1</button>
+    <button class="preset-btn" data-preset="studioMatch" aria-pressed="false">Top</button>
     <button class="preset-btn dev-only" data-preset="rightSide1to1" aria-pressed="false">Right 1:1</button>
     <button class="preset-btn dev-only" data-preset="leftSide1to1" aria-pressed="false">Left 1:1</button>
     <button class="preset-btn dev-only" data-preset="front1to1" aria-pressed="false">Front 1:1</button>
     <button class="preset-btn dev-only" data-preset="rear1to1" aria-pressed="false">Rear 1:1</button>
-    <button class="preset-btn dev-only" data-preset="bottom1to1" aria-pressed="false">Bottom 1:1</button>
-    <button class="preset-btn active" data-preset="hero3D" aria-pressed="true">3D</button>
+    <button class="preset-btn" data-preset="bottom1to1" aria-pressed="false">Bottom 1:1</button>
+    <button class="preset-btn active" data-preset="hero3D" aria-pressed="true">Reset view</button>
     <button class="preset-btn" data-preset="screenZoom" aria-pressed="false">Screen</button>
-    <button class="preset-btn" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
-    <button class="preset-btn" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
-    <button class="preset-btn" data-preset="portsMacro" aria-pressed="false">Ports</button>
-    <button class="preset-btn" data-preset="grilleMacro" aria-pressed="false">Grille</button>
-    <button id="btn-beat-tour" class="beat-launch" aria-pressed="false">Beat Tour</button>
+    <button class="preset-btn dev-only" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
+    <button class="preset-btn dev-only" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
+    <button class="preset-btn dev-only" data-preset="portsMacro" aria-pressed="false">Ports</button>
+    <button class="preset-btn dev-only" data-preset="grilleMacro" aria-pressed="false">Grille</button>
+  </nav>
+  <details class="songs-menu"><summary>Songs +</summary><div class="songs-list">
+    <button id="btn-beat-tour" class="song-launch" aria-pressed="false">Numb / Encore</button>
     <button id="btn-still-dre" class="song-launch" aria-pressed="false" title="Play Still D.R.E. through the OP–XY controls">Still D.R.E.</button>
+    <button id="btn-clint-eastwood" class="song-launch" aria-pressed="false" title="Build Clint Eastwood through the OP–XY controls">Clint Eastwood</button>
+    <button id="btn-nineteen" class="song-launch" aria-pressed="false" title="Build 19-2000 through the OP–XY controls">19-2000</button>
+    <button id="btn-azeroth" class="song-launch" aria-pressed="false" title="Build the original World of Warcraft login theme through the OP–XY controls">Legends of Azeroth</button>
+    <div id="song-session" class="song-session" hidden>
+      <span id="song-session-label"></span>
+      <div class="song-session-actions">
+        <button id="song-restart" aria-label="Restart song build" title="Restart song build"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg></button>
+        <button id="song-return">Return to project</button>
+      </div>
+    </div>
     <span id="beat-panel" class="beat-actions" hidden>
       <button id="beat-keep" hidden>Keep Beat</button>
-      <button id="beat-return">Return</button>
     </span>
-  </nav>
+  </div></details>
   <span id="beat-status" class="sr-only" role="status"></span>
   <span id="song-status" class="sr-only" role="status"></span>
 
-  <!-- Keyboard Shortcuts & Controls Info -->
-  <aside class="interaction-hint" aria-label="Keyboard and Mouse Shortcuts">
-    <span class="hint-title">drag knobs / press keys</span>
-    <span class="hint-row">middle/right drag orbit&nbsp;&nbsp; <kbd>shift</kbd> + middle/right pan&nbsp;&nbsp; wheel zoom</span>
-    <span class="hint-row"><kbd>space</kbd><span>play</span><kbd>1–0</kbd><span>accidentals</span><kbd>i</kbd><span>controls</span></span>
-    <span class="hint-notes">naturals&nbsp; a s d f g h j k l z x v b n&nbsp;&nbsp; <kbd>\</kbd> bar</span>
+  <aside class="interaction-hint" aria-label="Camera controls">
+    <span class="desktop-hint">Drag empty space to orbit · Right-drag to pan · Scroll to zoom</span>
+    <span class="touch-hint">Drag to orbit · Two fingers to pan / zoom</span>
+    <button id="dismiss-hint" aria-label="Dismiss camera help">×</button>
   </aside>
-
-  <p class="mobile-orientation-note" aria-hidden="true">landscape view<br>rotate phone</p>
 
 </body>
 </html>
