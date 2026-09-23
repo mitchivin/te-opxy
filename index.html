@@ -6,42 +6,54 @@
   <title>Teenage Engineering OP-XY | Interactive WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-DOk4VoMM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-HSUxskqx.css">
+  <script type="module" crossorigin src="./assets/index-BO7kBOGt.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BuUNQtNg.css">
 </head>
 <body data-song-mode="build">
   <!-- Songs: the stage header -->
   <header class="stage-bar songs-menu">
-    <div class="song-picker">
-      <button class="song-picker-toggle" aria-expanded="false" aria-controls="song-picker-list">
-        <span class="sr-only">Songs: </span><span class="song-picker-label">choose a song</span><span class="song-picker-caret" aria-hidden="true"></span>
-      </button>
-      <nav id="song-picker-list" class="song-picker-list" aria-label="Songs" hidden>
-        <button id="btn-beat-tour" class="song-launch" aria-pressed="false">Numb / Encore</button>
-        <button id="btn-still-dre" class="song-launch" aria-pressed="false" title="Play Still D.R.E. through the OP–XY controls">Still D.R.E.</button>
-        <button id="btn-clint-eastwood" class="song-launch" aria-pressed="false" title="Build Clint Eastwood through the OP–XY controls">Clint Eastwood</button>
-        <button id="btn-nineteen" class="song-launch" aria-pressed="false" title="Build 19-2000 through the OP–XY controls">19-2000</button>
-        <button id="btn-azeroth" class="song-launch" aria-pressed="false" title="Build the original World of Warcraft login theme through the OP–XY controls">Legends of Azeroth</button>
-        <button id="btn-project-lee" class="song-launch" aria-pressed="false" title="Build Project Lee through the OP–XY controls">Project Lee</button>
-      </nav>
-    </div>
     <fieldset id="song-mode" class="song-mode">
       <legend class="sr-only">Song mode</legend>
       <label><input type="radio" name="song-mode" value="build" checked><span>build</span></label>
       <label><input type="radio" name="song-mode" value="play"><span>play</span></label>
     </fieldset>
+    <div class="song-picker">
+      <button class="song-picker-toggle" aria-expanded="false" aria-controls="song-picker-menu">
+        <span class="sr-only">Songs: </span><span class="song-picker-label">choose a song</span><span class="song-picker-caret" aria-hidden="true"></span>
+      </button>
+      <nav id="song-picker-menu" class="song-picker-menu" aria-label="Songs" hidden>
+        <div class="song-picker-actions">
+          <button id="btn-return-project" class="song-session-action" type="button" hidden>Return to project</button>
+          <button id="btn-restart-build" class="song-session-action" type="button" hidden>Restart build</button>
+        </div>
+        <div class="song-picker-list">
+          <button id="btn-beat-tour" class="song-launch" type="button">Numb / Encore</button>
+          <button id="btn-still-dre" class="song-launch" type="button">Still D.R.E.</button>
+          <button id="btn-clint-eastwood" class="song-launch" type="button">Clint Eastwood</button>
+          <button id="btn-nineteen" class="song-launch" type="button">19-2000</button>
+          <button id="btn-azeroth" class="song-launch" type="button">Legends of Azeroth</button>
+          <button id="btn-project-lee" class="song-launch" type="button">Project Lee</button>
+        </div>
+      </nav>
+    </div>
     <p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p>
+    <div class="project-links">
+      <button class="project-links-toggle" type="button" aria-label="About this project" aria-expanded="false" aria-controls="project-links-menu">
+        <span class="project-links-icon" aria-hidden="true"></span>
+      </button>
+      <nav id="project-links-menu" class="project-links-menu" aria-label="About this project" hidden>
+        <p class="project-links-credit">made by mitch ivin</p>
+        <a href="https://mitchivin.com/" target="_blank" rel="noopener noreferrer">portfolio<span class="project-links-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://github.com/mitchivin" target="_blank" rel="noopener noreferrer">github<span class="project-links-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </nav>
+    </div>
   </header>
 
   <!-- The stage: the 3D canvas fills exactly the space between the bars -->
   <div class="stage">
     <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
+    <p id="instrument-keyboard-help" class="sr-only">Keyboard controls: Space plays or stops; R records; M toggles the metronome; number keys play notes; Escape stops or returns from a song.</p>
     <div class="stage-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <div id="camera-tour-caption" class="camera-tour-caption" hidden>
-      <span id="camera-tour-shot"></span>
-      <span id="camera-tour-count"></span>
-      <button id="camera-tour-exit" type="button" aria-label="Stop camera tour">close</button>
-    </div>
   </div>
 
   <!-- Views: the stage footer -->
