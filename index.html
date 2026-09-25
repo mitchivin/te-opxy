@@ -6,8 +6,9 @@
   <title>Teenage Engineering OP-XY | Interactive WebGL Simulation</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/index-j7m8nt8v.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CUwIxhJF.css">
+  <script type="module" crossorigin src="./assets/opxy-BM9JZGwk.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/stage-background-CfAl_7w6.js">
+  <link rel="stylesheet" crossorigin href="./assets/opxy-C1fsqrzg.css">
 </head>
 <body data-song-mode="build">
   <!-- Songs: the stage header -->
@@ -38,6 +39,7 @@
       </nav>
     </div>
     <p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p>
+    <a class="device-switch" href="./op-1-field/">OP–1 field <span aria-hidden="true">↗</span></a>
     <div class="project-links">
       <button class="project-links-toggle" type="button" aria-label="About this project" aria-expanded="false" aria-controls="project-links-menu">
         <span class="project-links-icon" aria-hidden="true"></span>
