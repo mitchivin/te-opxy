@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="description" content="Explore and play an interactive OP-XY in your browser. Build featured tracks, shape sounds and inspect the device in 3D.">
+  <link rel="canonical" href="https://mitchivin.github.io/te-opxy/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OP-XY | Interactive Study">
+  <meta property="og:description" content="Explore and play an interactive OP-XY in your browser. Build featured tracks, shape sounds and inspect the device in 3D.">
+  <meta property="og:url" content="https://mitchivin.github.io/te-opxy/">
+  <meta property="og:image" content="https://mitchivin.github.io/te-opxy/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OP-XY interactive 3D device">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OP-XY | Interactive Study">
+  <meta name="twitter:description" content="Explore and play an interactive OP-XY in your browser. Build featured tracks, shape sounds and inspect the device in 3D.">
+  <meta name="twitter:image" content="https://mitchivin.github.io/te-opxy/preview.jpg">
+  <meta name="twitter:image:alt" content="OP-XY interactive 3D device">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teenage Engineering OP-XY | Interactive WebGL Simulation</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121417'/><circle cx='50' cy='50' r='25' fill='%23ff3333'/></svg>">
+  <meta name="theme-color" content="#000000">
+  <title>OP-XY | Interactive Study</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/te-opxy/assets/opxy-favicon-B5K6IOPI.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/te-opxy/assets/opxy-favicon-7C_p6PR1.svg">
   <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="./assets/opxy-BM9JZGwk.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/stage-background-CfAl_7w6.js">
-  <link rel="stylesheet" crossorigin href="./assets/opxy-C1fsqrzg.css">
+  <script type="module" crossorigin src="/te-opxy/assets/index-C18eLf3G.js"></script>
+  <link rel="stylesheet" crossorigin href="/te-opxy/assets/index-Eezpj41K.css">
 </head>
 <body data-song-mode="build">
   <!-- Songs: the stage header -->
@@ -39,7 +56,7 @@
       </nav>
     </div>
     <p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p>
-    <a class="device-switch" href="./op-1-field/">OP–1 field <span aria-hidden="true">↗</span></a>
+    <a class="device-switch" href="https://mitchivin.github.io/te-op1-field/">OP–1 field <span aria-hidden="true">↗</span></a>
     <div class="project-links">
       <button class="project-links-toggle" type="button" aria-label="About this project" aria-expanded="false" aria-controls="project-links-menu">
         <span class="project-links-icon" aria-hidden="true"></span>
@@ -47,7 +64,7 @@
       <nav id="project-links-menu" class="project-links-menu" aria-label="About this project" hidden>
         <p class="project-links-credit">made by mitch ivin</p>
         <a href="https://mitchivin.com/" target="_blank" rel="noopener noreferrer">portfolio<span class="project-links-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-        <a href="https://github.com/mitchivin" target="_blank" rel="noopener noreferrer">github<span class="project-links-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://github.com/mitchivin/te-opxy" target="_blank" rel="noopener noreferrer">github<span class="project-links-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </nav>
     </div>
   </header>

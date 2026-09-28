@@ -121,6 +121,16 @@ PROVENANCE.md), converted to 44.1 kHz mono WAV.
 
 No recorded song audio is included in any of these files.
 
+Field's `songs/nineteen/field/hook-b4.wav`, `answer-b5.wav` and `bass-d2.wav`
+are mono derivatives of the corresponding GeneralUser GS
+single-note sources described above (respectively Trumpet B4, Ocarina B5,
+and Bass & Lead D2). `songs/nineteen/field/drum-kit.wav` concatenates the
+above 19-2000 CC0 kick, closed hat and shaker plus GeneralUser GS Power
+snare, repeated across 24 editable regions. Preparation is reproducible with
+`python scripts/op1-field/prepare-nineteen.py` (ffmpeg required). No original
+song recording, rendered OP-XY performance or finished musical phrase is
+included. The original source attribution and permissions above apply.
+
 ### Numb / Encore synth, bass and drums
 
 `songs/numb-encore/synth/*.mp3` (GM program 90 "Polysynth") and `songs/numb-encore/bass/*.mp3` (GM
@@ -134,6 +144,28 @@ Sonic Pi samples `bd_klub`, `sn_generic` and `drum_cymbal_closed` from the
 `supersonic-scsynth-samples` npm package (freesound.org sources placed in the
 public domain under CC0 1.0; see that package's PROVENANCE.md), converted to
 44.1 kHz mono WAV.
+
+### Field catalogue derivatives
+
+The WAV files in `songs/clint-eastwood/field/`, `songs/still-dre/field/`,
+`songs/numb-encore/field/` and `songs/mario/field/` are prepared derivatives
+of the individual licensed sources already attributed above. Exact source
+paths and operations are listed in `src/op1-field/song-sample-manifest.json`.
+Clint uses GeneralUser GS Electric Grand F#3 and Picked Bass G1; Still D.R.E.
+uses GeneralUser GS Electric Grand E5 and Bass & Lead E1; +52-cent tuning
+is now applied by the editable Field sampler rather than baked into the files;
+Numb uses GeneralUser GS Polysynth A#5 / A#4 and Synth Bass 1 A#2. The Mario
+pulse and triangle notes extend whole cycles of this project's original
+chip-style single-note WAVs; its noise hit is likewise an original generated
+source. These are not samples of the Nintendo recording.
+
+Each drum kit concatenates its song's existing GeneralUser GS / Sonic Pi CC0
+hits (DRE uses the shared GeneralUser Power snare), or Mario's original noise
+hit, into 24 editable regions. The GeneralUser permissions and Sonic Pi CC0
+attributions above apply unchanged. Preparation includes mono conversion,
+optional filtering, headroom and region-end fades. Reproduce with
+`python scripts/op1-field/prepare-catalogue.py` (ffmpeg required).
+No recorded song, rendered OP-XY performance or musical phrase is included.
 
 ### Recorded orchestral instruments (strings, choir, contrabass, cello, orchestra kit)
 
