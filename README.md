@@ -6,11 +6,11 @@ An interactive browser interpretation of the Teenage Engineering OP-XY. Explore 
 
 ![OP-XY interactive 3D device](preview.jpg)
 
-Works on desktop and phone. Choose **Build** to watch a track take shape through the device controls, **Play** to hear the arrangement, or play the keys and shape your own sounds.
+Works on desktop and phone. Choose the steps icon (**Watch build**) or musical-note icon (**Full song**), then press **Play**. The transport handles Stop, Pause and Resume. While running, changing song or mode switches straight to that choice; paused or stopped selections stay quiet. You can also play the keys and shape your own sounds.
 
 - Playable keys, buttons and encoders with a responsive device display.
 - Sequencer patterns, sound controls and a saved browser project.
-- Featured tracks including Still D.R.E., Clint Eastwood, 19-2000 and Numb / Encore.
+- Featured tracks: Blinding Lights, Children, The Final Countdown, Project Lee, Sandstorm and Sweet Dreams.
 - Camera views for the screen, controls and hardware details.
 
 ![OP-XY screen and controls](surface.jpg)

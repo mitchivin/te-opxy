@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- The Final Countdown is the longest title in both XY catalogues (19 characters). -->
+<html lang="en" style="--song-title-characters: 19">
 <head>
   <meta name="description" content="Explore and play an interactive OP-XY in your browser. Build featured tracks, shape sounds and inspect the device in 3D.">
   <link rel="canonical" href="https://mitchivin.github.io/te-opxy/">
@@ -23,22 +24,25 @@
   <title>OP-XY | Interactive Study</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/te-opxy/assets/opxy-favicon-B5K6IOPI.png">
   <link rel="icon" type="image/svg+xml" sizes="any" href="/te-opxy/assets/opxy-favicon-7C_p6PR1.svg">
-  <script>document.documentElement.dataset.uiMode = new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
-  <script type="module" crossorigin src="/te-opxy/assets/index-D8BB_Ral.js"></script>
-  <link rel="stylesheet" crossorigin href="/te-opxy/assets/index-BI7GUsH2.css">
+  <script>document.documentElement.dataset.uiMode = 'opxy' === 'development' && new URLSearchParams(location.search).get('dev') === '1' ? 'dev' : 'live';</script>
+  <script type="module" crossorigin src="/te-opxy/assets/index-eGsoLvYG.js"></script>
+  <link rel="stylesheet" crossorigin href="/te-opxy/assets/index-B_Lb_lIP.css">
 </head>
-<body data-song-mode="build">
+<body data-song-mode="build" data-startup="loading">
   <!-- Songs: the stage header -->
   <header class="stage-bar songs-menu">
     <div class="song-controls">
-      <fieldset id="song-mode" class="song-mode">
-        <legend class="sr-only">Song mode</legend>
-        <label><input type="radio" name="song-mode" value="build" checked><span>build</span></label>
-        <label><input type="radio" name="song-mode" value="play"><span>play</span></label>
-      </fieldset>
+      <div class="song-playback">
+        <fieldset id="song-mode" class="song-mode">
+          <legend class="sr-only">Playback mode</legend>
+          <label data-label="Watch build"><input type="radio" name="song-mode" value="build" checked aria-label="Watch build"><span class="song-mode-icon" aria-hidden="true"></span><span class="sr-only">Watch build</span></label>
+          <label data-label="Full song"><input type="radio" name="song-mode" value="play" aria-label="Full song"><span class="song-mode-icon" aria-hidden="true"></span><span class="sr-only">Full song</span></label>
+        </fieldset>
+        <button id="song-transport" class="song-transport" type="button" data-action="start" data-icon="play" aria-label="Play the build of Blinding Lights"><span class="song-transport-icon" aria-hidden="true"></span><span class="song-transport-label">play</span></button>
+      </div>
       <div class="song-picker">
         <button class="song-picker-toggle" aria-expanded="false" aria-controls="song-picker-menu">
-          <span class="sr-only">Songs: </span><span class="song-picker-label">choose a song</span><span class="song-picker-caret" aria-hidden="true"></span>
+          <span class="sr-only">Songs: </span><span class="song-picker-label">Blinding Lights</span><span class="song-picker-caret" aria-hidden="true"></span>
         </button>
         <nav id="song-picker-menu" class="song-picker-menu" aria-label="Songs" hidden>
           <div class="song-picker-actions">
@@ -46,18 +50,16 @@
             <button id="btn-restart-build" class="song-session-action" type="button" hidden>Restart build</button>
           </div>
           <div class="song-picker-list">
-            <button id="btn-beat-tour" class="song-launch" type="button">Numb / Encore</button>
-            <button id="btn-still-dre" class="song-launch" type="button">Still D.R.E.</button>
-            <button id="btn-clint-eastwood" class="song-launch" type="button">Clint Eastwood</button>
-            <button id="btn-nineteen" class="song-launch" type="button">19-2000</button>
-            <button id="btn-azeroth" class="song-launch" type="button">Legends of Azeroth</button>
-            <button id="btn-project-lee" class="song-launch" type="button">Project Lee</button>
-            <button id="btn-mario" class="song-launch" type="button">Super Mario Bros.</button>
+            <button id="btn-blinding-lights" class="song-launch" data-song="blinding-lights" type="button">Blinding Lights</button>
+            <button id="btn-children" class="song-launch" data-song="children" type="button">Children</button>
+            <button id="btn-final-countdown" class="song-launch" data-song="final-countdown" type="button">The Final Countdown</button>
+            <button id="btn-project-lee" class="song-launch" data-song="project-lee" type="button">Project Lee</button>
+            <button id="btn-sandstorm" class="song-launch" data-song="sandstorm" type="button">Sandstorm</button>
+            <button id="btn-sweet-dreams" class="song-launch" data-song="sweet-dreams" type="button">Sweet Dreams</button>
           </div>
         </nav>
       </div>
     </div>
-    <p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p>
     <div class="stage-utilities">
       <a class="device-switch" href="https://mitchivin.github.io/te-op1-field/">OP–1 field <span aria-hidden="true">↗</span></a>
       <div class="project-links">
@@ -73,12 +75,19 @@
     </div>
   </header>
 
-  <!-- The stage: the 3D canvas fills exactly the space between the bars -->
-  <div class="stage">
-    <main id="webgl-container" role="application" aria-label="OP-XY 3D Workstation"></main>
+  <!-- Status overlays the continuous device stage. -->
+  <main class="stage">
+    <div class="stage-loading" role="status" aria-live="polite">
+      <span class="stage-loading-meter" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="stage-loading-label">loading op–xy</span>
+      <button type="button" hidden>try again</button>
+    </div>
+    <div class="stage-status"><p class="song-status"><span id="beat-status" role="status"></span><span id="song-status" role="status"></span></p></div>
+    <div id="webgl-container" class="stage-viewport" role="application" aria-label="OP-XY 3D Workstation" aria-busy="true">
+      <div class="stage-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
     <p id="instrument-keyboard-help" class="sr-only">Keyboard controls: P switches power; Space plays or stops; R records; M toggles the metronome; number keys play notes; left and right brackets bend pitch while held; Escape stops or returns from a song.</p>
-    <div class="stage-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  </div>
+  </main>
 
   <!-- Views: the stage footer -->
   <footer class="stage-bar views-bar">
@@ -95,8 +104,8 @@
       <button class="preset-btn dev-only" data-preset="encodersMacro" aria-pressed="false">Encoders</button>
       <button class="preset-btn dev-only" data-preset="keyboardMacro" aria-pressed="false">Keys</button>
       <button class="preset-btn dev-only" data-preset="grilleMacro" aria-pressed="false">Grille</button>
+      <button id="btn-camera-tour" class="camera-tour-toggle" type="button" aria-pressed="false" aria-label="Start a guided orbit around the device">tour</button>
     </nav>
-    <button id="btn-camera-tour" class="camera-tour-toggle" type="button" aria-pressed="false" title="Start a guided orbit around the device">tour</button>
   </footer>
 
 </body>
