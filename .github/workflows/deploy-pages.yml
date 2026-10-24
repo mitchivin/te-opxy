@@ -1,0 +1,57 @@
+name: Deploy OP-XY
+
+# The site is built from the private mitchivindesign/te-op-xy source on each run.
+# Nothing built is committed here. The private repo starts a run by moving the deploy tag.
+on:
+  push:
+    tags: [deploy]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          repository: mitchivindesign/te-op-xy
+          ssh-key: ${{ secrets.SOURCE_SSH_KEY }}
+          persist-credentials: false
+          path: source
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      # This log is public, so the build and packing print nothing about the source.
+      - name: Build site
+        working-directory: source
+        run: |
+          sudo apt-get update > /dev/null 2>&1 && sudo apt-get install -y --no-install-recommends ffmpeg > /dev/null 2>&1 || { echo "Setup failed."; exit 1; }
+          npm ci > /dev/null 2>&1 || { echo "Install failed."; exit 1; }
+          npm run build:sites > /dev/null 2>&1 || { echo "Build failed."; exit 1; }
+          tar --dereference --hard-dereference --directory "dist/sites/opxy" -cf "$RUNNER_TEMP/artifact.tar" --exclude=.git .
+          echo "Site built."
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
