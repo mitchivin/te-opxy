@@ -22,7 +22,7 @@ This repository contains the compiled website and public project information. Th
 ## Related
 
 - [OP-1 Field study](https://github.com/mitchivin/te-op1-field)
-- [MiPod Classic](https://github.com/mitchivin/mipod)
+- [iPod Classic](https://github.com/mitchivin/ipod-classic)
 - [Mi Boy Color](https://github.com/mitchivin/miboy)
 - [Mitch Ivin](https://mitchivin.com/)
 
